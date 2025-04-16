@@ -45,6 +45,5 @@ zerops:
         - port: 3000
           httpSupport: true
       # how to start your application
-      prepareCommands:
-        - cd apps/web && pnpm install --production
-      start: cd apps/web && NODE_ENV=production node_modules/.bin/next start
+
+      start: pnpm start
