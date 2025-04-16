@@ -43,4 +43,4 @@ zerops:
         - port: 3000
           httpSupport: true
       # how to start your application
-      start: pnpm start
+      start: cd apps/web && pnpm start
