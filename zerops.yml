@@ -17,6 +17,7 @@ zerops:
         - apps/web/.next
         - apps/web/public
         - apps/web/package.json
+        - apps/web/node_modules
         - packages
         - node_modules
         - pnpm-workspace.yaml
@@ -44,4 +45,6 @@ zerops:
         - port: 3000
           httpSupport: true
       # how to start your application
-      start: pnpm start
+      prepareCommands:
+        - cd apps/web && pnpm install --production
+      start: cd apps/web && NODE_ENV=production node_modules/.bin/next start
