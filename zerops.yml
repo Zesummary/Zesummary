@@ -1,0 +1,46 @@
+zerops:
+  - setup: web
+    # ==== how to build you application ====
+    build:
+      # what technologies should the build
+      # container be based on (can be an array)
+      base: nodejs@20
+      # what commands to use to build your app
+
+      buildCommands:
+        - pnpm install
+        - pnpm build
+
+      # select which files / folders to deploy
+      # after the build successfully finished
+      deployFiles:
+        - apps/web/.next
+        - apps/web/public
+        - packages
+        - node_modules
+        - pnpm-workspace.yaml
+        - package.json
+        - pnpm-lock.yaml
+        - turbo.json
+        - .npmrc
+      # *optional*: which files / folders
+      # to cache for the next build run
+      cache:
+        - node_modules
+        - .turbo
+        - pnpm-lock.yaml
+    # ==== how to run your application ====
+    run:
+      # what technology should the runtime
+      # container be based on, can be extended
+      # in `run.prepareCommands` using
+      # `zsc install nodejs@20`
+      base: nodejs@20
+      # what ports your app listens on
+      # and whether it supports http traffic
+
+      ports:
+        - port: 3000
+          httpSupport: true
+      # how to start your application
+      start: pnpm start

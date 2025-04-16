@@ -1,4 +1,10 @@
 import { Button } from "@workspace/ui/components/button";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Zusummary",
+  description: "Zusummary",
+};
 
 export default function Page() {
   return (
