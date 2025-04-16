@@ -10,6 +10,7 @@ zerops:
       buildCommands:
         - pnpm install
         - pnpm build
+        - cp -r apps/web/package.json .
 
       # select which files / folders to deploy
       # after the build successfully finished
@@ -23,6 +24,7 @@ zerops:
         - pnpm-lock.yaml
         - turbo.json
         - .npmrc
+        - apps/web/package.json
       # *optional*: which files / folders
       # to cache for the next build run
       cache:
@@ -43,4 +45,4 @@ zerops:
         - port: 3000
           httpSupport: true
       # how to start your application
-      start: cd apps/web && pnpm start
+      start: pnpm start
