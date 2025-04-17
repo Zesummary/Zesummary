@@ -10,6 +10,10 @@ export const metadata: Metadata = {
     "Connect your email and get AI-powered summaries, categorized and actionable.",
 };
 
+interface FeatureIconProps {
+  className?: string;
+}
+
 export default function Page() {
   return (
     <div className="flex flex-col items-center justify-center min-h-svh px-4 py-12 md:py-24">
@@ -100,7 +104,7 @@ const features = [
     title: "Smart Digest Timeline",
     description:
       "View your emails in a chronological timeline with daily and weekly highlights.",
-    icon: ({ className }) => (
+    icon: ({ className }: FeatureIconProps) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -120,7 +124,7 @@ const features = [
     title: "Zen Mode Summaries",
     description:
       "Get the essence of your inbox in under a minute with minimalist bullet point views.",
-    icon: ({ className }) => (
+    icon: ({ className }: FeatureIconProps) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -143,7 +147,7 @@ const features = [
     title: "Auto-Actions",
     description:
       "Get AI-suggested actions for your emails like paying bills or unsubscribing.",
-    icon: ({ className }) => (
+    icon: ({ className }: FeatureIconProps) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
