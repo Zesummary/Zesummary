@@ -1,5 +1,4 @@
 import { Button } from "@workspace/ui/components/button";
-import { Card } from "@workspace/ui/components/card";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -156,20 +155,17 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
+                  className="rounded-xl p-6 bg-gradient-to-br from-background to-muted hover:shadow-lg transition-all duration-300 group border h-full"
                 >
-                  <Card className="h-full p-6 bg-gradient-to-br from-background to-muted hover:shadow-lg transition-all duration-300 group">
-                    <div className="mb-6">
-                      <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        {feature.icon}
-                      </div>
+                  <div className="mb-6">
+                    <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      {feature.icon}
                     </div>
-                    <h3 className="text-xl font-semibold mb-2">
-                      {feature.title}
-                    </h3>
-                    <p className="text-muted-foreground">
-                      {feature.description}
-                    </p>
-                  </Card>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-muted-foreground">{feature.description}</p>
                 </motion.div>
               ))}
             </div>
